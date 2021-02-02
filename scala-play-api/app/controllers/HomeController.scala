@@ -21,4 +21,9 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
   def index() = Action { implicit request: Request[AnyContent] =>
     Ok(views.html.index())
   }
+
+  def greeting(greet : String) = Action { implicit request: Request[AnyContent] =>
+    var sresponse = "hello "+ greet;
+    Ok(views.html.customentry(sresponse))
+  }
 }
