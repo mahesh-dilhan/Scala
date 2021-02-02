@@ -1,9 +1,8 @@
 package controllers
 
+import javax.xml.transform.OutputKeys
 import org.scalatestplus.play._
 import org.scalatestplus.play.guice._
-import play.api.test._
-import play.api.test.Helpers._
 
 /**
  * Add your spec here.
@@ -40,6 +39,15 @@ class HomeControllerSpec extends PlaySpec with GuiceOneAppPerTest with Injecting
       status(home) mustBe OK
       contentType(home) mustBe Some("text/html")
       contentAsString(home) must include ("Welcome to Play")
+    }
+
+    "render greeting message" in {
+      val request = FakeRequest(GET, "/greeting/Mahesh")
+      val sresponse = route(app,request).get
+
+      status(sresponse) mustBe OK
+      contextType(sresponse) mustBe Some("text/html")
+      contentAsString(sresponse) must include("Greetings.....hello Mahesh")
     }
   }
 }
