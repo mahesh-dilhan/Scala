@@ -20,4 +20,10 @@ object Function extends App {
     apply(a,b)
   }
   println(applyFn(10,6,sub))
+
+  def appplyFn2(a: Int, b:Int)( apply: (Int, Int) => Int ) : Int ={
+    apply(a,b)
+  }
+  println(applyFn(10,6,sub))
+
 }
