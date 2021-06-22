@@ -12,8 +12,8 @@ object Function extends App {
   }
   println(functionProvider()(7,3))
 
-  def functionProvider1(): (Int,Int) => Int ={
-    (a:Int, b:Int) => a-b
-  }
+  def functionProvider1(): (Int,Int) => Int =(a:Int, b:Int) => a-b
+
   println(functionProvider1()(10,5))
+
 }
