@@ -5,5 +5,10 @@ object Function extends App {
     a-b
   }
 
-  print(sub(2,1))
+  println(sub(2,1))
+
+  def functionProvider(): (Int,Int) => Int ={
+    sub
+  }
+  println(functionProvider()(7,3))
 }
