@@ -16,4 +16,8 @@ object Function extends App {
 
   println(functionProvider1()(10,5))
 
+  def applyFn(a: Int, b: Int, apply:(Int,Int)=> Int) : Int ={
+    apply(a,b)
+  }
+  println(applyFn(10,6,sub))
 }
