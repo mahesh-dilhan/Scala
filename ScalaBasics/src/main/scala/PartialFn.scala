@@ -16,6 +16,9 @@ object PartialFn {
       case x if x % 2 == 1 => x+" is odd"
     }
 
+    val oddNumbers = sample collect isOdd
+    println(oddNumbers)
+
     // the method orElse allows chaining another partial function to handle
     // input outside the declared domain
     val numbers = sample map (isEven orElse isOdd)
